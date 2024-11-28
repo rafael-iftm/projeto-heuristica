@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="img/books.png" type="image/x-icon">
+    <script defer src="scripts.js"></script>
+    <title>Consulta de Publicações</title>
+</head>
+<body>
+    <main>
+        <fieldset>
+            <legend>📚 Consulta de Publicações</legend>
+            <form id="consultaForm">
+                <div class="input-group">
+                    <label for="filtro">🗂️ Selecione uma Categoria</label>
+                    <select id="filtro" onchange="atualizarCampo()">
+                        <option value="" disabled selected>Autor, Título ou ISBN</option>
+                        <option value="Autor">✍️ Autor</option>
+                        <option value="Titulo">📖 Título</option>
+                        <option value="ISBN">🔖 ISBN</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <input type="text" id="campoInput" placeholder="Escolha uma das categorias acima" disabled />
+                </div>
+
+                <div class="actions">
+                    <button type="reset" onclick="limpar()">♻️ Limpar</button>
+                    <button type="button" onclick="verificar()">🔍 Buscar</button>
+                </div>
+            </form>
+        </fieldset>
+    </main>
+</body>
+</html>
