@@ -6,6 +6,12 @@ function atualizarCampo() {
     if (filtro) {
         campoInput.disabled = false;
         campoInput.placeholder = `Digite o ${filtro}`;
+        // Adiciona o ouvinte de evento para a tecla Enter
+        campoInput.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter') {
+                verificar();
+            }
+        });
     } else {
         campoInput.disabled = true;
         campoInput.placeholder = "Escolha uma das categorias acima";
